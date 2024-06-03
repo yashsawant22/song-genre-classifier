@@ -3,3 +3,4 @@ scikit-learn
 keras
 tensorflow
 flask
+gunicorn
