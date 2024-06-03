@@ -5,6 +5,8 @@ from nltk import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
+nltk.download('stopwords')
+
 app = Flask(__name__)
 
 stop = list(set(stopwords.words('english'))) # stopwords
