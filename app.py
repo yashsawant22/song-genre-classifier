@@ -4,6 +4,7 @@ import nltk
 from nltk import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
+from text_utils import tokenizer
 
 nltk.download('stopwords')
 
@@ -12,12 +13,12 @@ app = Flask(__name__)
 stop = list(set(stopwords.words('english'))) # stopwords
 wnl = WordNetLemmatizer() # lemmatizer
 
-def tokenizer(x): # custom tokenizer
-    return (
-        wnl.lemmatize(w) 
-        for w in word_tokenize(x) 
-        if len(w) > 2 and w.isalnum() # only words that are > 2 characters
-    )  
+#def tokenizer(x): # custom tokenizer
+#    return (
+#        wnl.lemmatize(w) 
+#        for w in word_tokenize(x) 
+#        if len(w) > 2 and w.isalnum() # only words that are > 2 characters
+#    )  
 
 import pickle
 with open('genrepredict.pkl', 'rb') as f:
