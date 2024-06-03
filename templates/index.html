@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Song Genre Predictor</title>
+</head>
+<body>
+    <h1>Song Genre Predictor</h1>
+    <form method="post">
+        <textarea name="lyrics" placeholder="Enter lyrics here..." rows="4" cols="50"></textarea>
+        <br>
+        <button type="submit">Predict Genre</button>
+    </form>
+    {% if genre %}
+        <h2>Predicted Genre: {{ genre }}</h2>
+    {% endif %}
+</body>
+</html>
