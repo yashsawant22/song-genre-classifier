@@ -7,6 +7,9 @@ from nltk.corpus import stopwords
 
 app = Flask(__name__)
 
+stop = list(set(stopwords.words('english'))) # stopwords
+wnl = WordNetLemmatizer() # lemmatizer
+
 def tokenizer(x): # custom tokenizer
     return (
         wnl.lemmatize(w) 
@@ -25,9 +28,6 @@ def index():
         genre = predict_genre(lyrics)  # Assume this function will handle your ML model
         return render_template('index.html', genre=genre)
     return render_template('index.html')
-
-stop = list(set(stopwords.words('english'))) # stopwords
-wnl = WordNetLemmatizer() # lemmatizer
 
 
 def predict_genre(lyrics):
