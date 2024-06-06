@@ -1,5 +1,8 @@
 
+from nltk import word_tokenize
+from nltk.stem import WordNetLemmatizer
 
+wnl = WordNetLemmatizer()
 
 def tokenizer(x): # custom tokenizer
     return (
