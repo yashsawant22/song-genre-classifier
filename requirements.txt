@@ -1,7 +1,7 @@
 numpy
 pandas
 nltk
-scikit-learn==1.0.2
+scikit-learn
 keras
 tensorflow
 flask
