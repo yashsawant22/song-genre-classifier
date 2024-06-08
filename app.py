@@ -4,14 +4,24 @@ import nltk
 from nltk import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
-from text_utils import tokenizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
+from sklearn.feature_extraction.text import TfidfTransformer, TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.utils import shuffle
+import pandas as pd
+import numpy as np
+#from text_utils import tokenizer
 
 nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('wordnet')
+
 
 app = Flask(__name__)
 
-stop = list(set(stopwords.words('english'))) # stopwords
-wnl = WordNetLemmatizer() # lemmatizer
+#stop = list(set(stopwords.words('english'))) # stopwords
+#wnl = WordNetLemmatizer() # lemmatizer
 
 #def tokenizer(x): # custom tokenizer
 #    return (
