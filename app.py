@@ -11,7 +11,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.utils import shuffle
 import pandas as pd
 import numpy as np
-#from text_utils import tokenizer
+from text_utils import tokenizer
 
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -39,7 +39,7 @@ def index():
     if request.method == 'POST':
         lyrics = request.form['lyrics']
         genre = predict_genre(lyrics)  # Assume this function will handle your ML model
-        return render_template('index.html', genre=genre)
+        return render_template('index.html', genre=genre[0])
     return render_template('index.html')
 
 

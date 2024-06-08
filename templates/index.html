@@ -2,17 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Song Genre Predictor</title>
+    <!-- Include Bootstrap CSS from CDN for quick integration -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Optional custom styles -->
+    <style>
+        .container { margin-top: 40px; }
+    </style>
 </head>
 <body>
-    <h1>Song Genre Predictor</h1>
-    <form method="post">
-        <textarea name="lyrics" placeholder="Enter lyrics here..." rows="4" cols="50"></textarea>
-        <br>
-        <button type="submit">Predict Genre</button>
-    </form>
-    {% if genre %}
-        <h2>Predicted Genre: {{ genre }}</h2>
-    {% endif %}
+    <div class="container">
+        <h1 class="mb-4">Song Genre Predictor</h1>
+        <form method="post" class="mb-3">
+            <div class="form-group">
+                <label for="lyrics">Enter lyrics:</label>
+                <textarea id="lyrics" name="lyrics" class="form-control" rows="4" placeholder="Enter lyrics here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict Genre</button>
+        </form>
+        {% if genre %}
+            <h2>Predicted Genre: <span class="badge badge-success">{{ genre }}</span></h2>
+        {% endif %}
+    </div>
+
+    <!-- Include Bootstrap JS and dependencies from CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
