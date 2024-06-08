@@ -1,8 +1,0 @@
-numpy
-pandas
-nltk
-scikit-learn
-keras
-tensorflow
-flask
-gunicorn
